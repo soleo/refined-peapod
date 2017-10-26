@@ -1,0 +1,27 @@
+{
+  "name": "refined-peapod",
+  "version": "0.0.1",
+  "description": "Chrome extension for Peapod.com",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soleo/refined-peapod.git"
+  },
+  "keywords": [
+    "peapod",
+    "extension",
+    "chrome"
+  ],
+  "author": "Xinjiang Shao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/soleo/refined-peapod/issues"
+  },
+  "homepage": "https://github.com/soleo/refined-peapod#readme"
+}

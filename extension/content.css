@@ -1,0 +1,116 @@
+/* night mode */
+/* inspired by https://inclusive-components.club/a-theme-switcher/ */
+:root {
+   background-color: #f2f2f2;
+   filter: invert(100%);
+}
+
+* {
+   background-color: inherit;
+}
+
+/* revert back the color filters */
+img:not([src*=".svg"]),
+.magnify-glass,
+.adsense_container,
+video {
+   filter: invert(100%);
+}
+
+.interweaved-content_leader,
+.interweaved-content_trailer,
+.splash-page_ads-container{
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    display: none;
+}
+
+
+/* add rounded corner for all regular images so that it look nicer */
+
+img:not([src*=".svg"]){
+    border-radius: 0.5rem;
+}
+
+.kwm-prod_wrapper img {
+    border-radius: inherit;
+}
+
+
+/* disable high-contrast-switch. Night mode doesn't need it */
+high-contrast-switch {
+    display: none !important;
+}
+
+/* peapod use inline svg, so I don't want those to be inverted */
+/* reverse for some icons https://www.peapod.com/shop/images/icons/PeapodIcons.json*/
+.icon--search,
+[svg-id="icon_search"] {
+    background-color: #d9d9d9 !important;
+}
+
+.carousel-nav_button [svg-id="arrow_carrot-left"],
+.carousel-nav_button [svg-id="arrow_carrot-right"]{
+    background-color: transparent !important;
+}
+
+.product-cart-cell_image {
+    z-index: 1;
+}
+
+.nutrition .section_sub, .nutrition .section-title{
+    margin: 0.4rem 0 0.2rem 0 !important;
+    padding: 0 !important;
+}
+
+.out-of-stock button.button--disabled{
+    color: #333 !important;
+}
+
+.mobile .promo-tile.promo-tile_nav .promo-tile_nav--text {
+    margin-left: 4.5rem;
+    padding-left: 0 !important;
+}
+
+.select-box-arrow {
+    background-color: inherit !important;
+    opacity: 1 !important;
+    background-image: none !important;
+    height: auto !important;
+}
+
+.item-detail_flag--flag:after{
+    z-index: 0 !important;
+}
+
+.dietary-attribute img {
+    margin-right: 1rem;
+}
+
+/* Rewrite the color for better display */
+.button--green {
+    background-color: rebeccapurple !important;
+}
+.product-grid-cell_main-price,
+.product-list-cell_main-price,
+.mobile-product-list-cell_main-price,
+.product-cart-cell_total,
+.price {
+    color: rebeccapurple !important;
+}
+
+.product-grid-cell_main-price--on-sale,
+.product-list-cell_main-price--on-sale,
+.mobile-product-list-cell_main-price--on-sale,
+.product-cart-cell_total--on-sale,
+.price.on-sale {
+    color: darkcyan !important;
+}
+.item-detail_flag--flag.sale {
+    background-color: darkcyan !important;
+}
+.item-detail_flag--flag.sale:after {
+    border-top-color: darkcyan !important;
+    border-bottom-color: darkcyan !important;
+}
+
