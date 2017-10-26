@@ -2,6 +2,7 @@
 An opinionated way of using Peapod. I'm not saying this is the only way,
 but I do like cleaner design rather than complex.
 
+
 ### UI Improvements
 - [ ] Night Mode Support
 - [ ] Clean Category Tree and Remove Icons
@@ -15,3 +16,12 @@ but I do like cleaner design rather than complex.
 - [ ] Quick Search in Google, Amazon, Instacart
 - [ ] If I cannot find my grocery here, I need to quick way to find it somewhere else
 - [ ] If I want peapod to carry the item I want, I want to provide an easy way to add the item. Expose it to the top navigation bar
+
+### Development
+
+### Load Extension In Chrome
+
+- Visit chrome://extensions/ in Chrome
+- Enable the Developer mode
+- Click on Load unpacked extension
+- Select the folder extension
