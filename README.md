@@ -1,7 +1,9 @@
-# refined-peapod
+# Refined Peapod
+
+[![Build Status](https://travis-ci.org/soleo/refined-peapod.svg?branch=master)](https://travis-ci.org/soleo/refined-peapod)
+
 An opinionated way of using Peapod. I'm not saying this is the only way,
 but I do like cleaner design rather than complex.
-
 
 ### UI Improvements
 - [X] Night Mode Support

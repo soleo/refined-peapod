@@ -24,7 +24,7 @@ async function init() {
 }
 
 function onDomReady() {
-	// do more changes when everything is loaded.
+	// Do more changes when everything is loaded.
 }
 
 init();
