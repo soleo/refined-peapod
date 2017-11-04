@@ -4,18 +4,23 @@ but I do like cleaner design rather than complex.
 
 
 ### UI Improvements
-- [ ] Night Mode Support
-- [ ] Clean Category Tree and Remove Icons
-- [ ] Simply Nav and Remove The menu item that I don't use often
-- [ ] Remove Notification Bar and Hi Message
+- [X] Night Mode Support
+- [X] Cleaner Category Tree and Remove Icons Before the Category Name
+- [X] Larger font size for the headings and copy block in splash pages
+- [X] Better Alignment for specials pod groups shelf header
+- [X] Remove all sales flags to make UI cleaner
+- [X]
+- [X] Simplify Navigation and Removed Express Shop, Delivery Time and Favorites
+- [X] Remove Notification Bar and Hi, User Message
 - [ ] Better format for Item Detail Description so that I can actually read.
-- [ ] Remove all sales flags to make UI cleaner
+
+- [ ] Support Custom Domain Name
 
 ### Function Improvements
-- [ ] Linkify the content when I see one
+- [ ] Linkify the content in Item Detail
 - [ ] Quick Search in Google, Amazon, Instacart
 - [ ] If I cannot find my grocery here, I need to quick way to find it somewhere else
-- [ ] If I want peapod to carry the item I want, I want to provide an easy way to add the item. Expose it to the top navigation bar
+- [ ] If I want Peapod to carry the item I want, I want to provide an easy way to add the item. Expose it to the top navigation bar
 
 ### Development
 

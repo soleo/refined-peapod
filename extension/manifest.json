@@ -30,13 +30,14 @@
         {
             "run_at": "document_start",
             "matches": [
-                "https://www.peapod.com/*"
+                "https://*.peapod.com/*"
             ],
             "css": [
                 "content.css"
             ],
             "js": [
-                "jquery-3.slim.min.js"
+                "jquery-3.slim.min.js",
+                "content.js"
             ]
         }
     ]

@@ -1,27 +1,76 @@
 {
-  "name": "refined-peapod",
-  "version": "0.0.1",
-  "description": "Chrome extension for Peapod.com",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/soleo/refined-peapod.git"
-  },
-  "keywords": [
-    "peapod",
-    "extension",
-    "chrome"
-  ],
-  "author": "Xinjiang Shao",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/soleo/refined-peapod/issues"
-  },
-  "homepage": "https://github.com/soleo/refined-peapod#readme"
+    "name": "refined-peapod",
+    "version": "0.0.1",
+    "description": "Chrome extension for Peapod.com",
+    "main": "index.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack",
+        "build:minified": "cross-env NODE_ENV=production webpack",
+        "watch": "webpack --watch",
+        "release:amo": "cd extension && webext submit",
+        "release:cws": "cd extension && webstore upload --auto-publish",
+        "release": "run-s build:minified update-version release:*",
+        "update-version": "VERSION=$(date -u +%y.%-m.%-d.%-H%M); echo $VERSION; dot-json extension/manifest.json version $VERSION",
+        "can-release": "if [ \"$TRAVIS_EVENT_TYPE\" = cron ] && [ $(git rev-list -n 1 --since=\"26 hours ago\" master) ]; then echo :ship-it:; else false; fi"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/soleo/refined-peapod.git"
+    },
+    "keywords": [
+        "peapod",
+        "extension",
+        "chrome"
+    ],
+    "author": "Xinjiang Shao",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/soleo/refined-peapod/issues"
+    },
+    "homepage": "https://github.com/soleo/refined-peapod#readme",
+    "dependencies": {
+        "dom-chef": "^3.0.0",
+        "dom-loaded": "^1.0.1",
+        "element-ready": "^2.2.0",
+        "select-dom": "^4.1.1",
+        "webext-dynamic-content-scripts": "^2.0.1",
+        "webext-options-sync": "^0.12.0",
+        "webextension-polyfill": "^0.2.1"
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.2",
+        "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+        "babel-plugin-transform-react-jsx": "^6.24.1",
+        "chrome-webstore-upload-cli": "^1.0.0",
+        "common-tags": "^1.4.0",
+        "cross-env": "^5.0.5",
+        "dot-json": "^1.0.3",
+        "npm-run-all": "^4.1.1",
+        "uglifyjs-webpack-plugin": "^1.0.0-beta.1",
+        "webext": "^1.9.1-with-submit.1",
+        "webpack": "^3.7.1"
+    },
+    "babel": {
+        "plugins": [
+            [
+                "transform-react-jsx",
+                {
+                    "pragma": "h",
+                    "useBuiltIns": true
+                }
+            ]
+        ],
+        "env": {
+            "testing": {
+                "plugins": [
+                    "transform-es2015-modules-commonjs"
+                ]
+            }
+        }
+    }
 }
