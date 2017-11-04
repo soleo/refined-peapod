@@ -9,7 +9,6 @@ but I do like cleaner design rather than complex.
 - [X] Larger font size for the headings and copy block in splash pages
 - [X] Better Alignment for specials pod groups shelf header
 - [X] Remove all sales flags to make UI cleaner
-- [X]
 - [X] Simplify Navigation and Removed Express Shop, Delivery Time and Favorites
 - [X] Remove Notification Bar and Hi, User Message
 - [ ] Better format for Item Detail Description so that I can actually read.
