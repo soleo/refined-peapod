@@ -9,24 +9,24 @@ const cdForm = document.querySelector('#custom-domain');
 const cdInput = document.querySelector('#custom-domain-origin');
 
 if (!chrome.permissions) {
-    cdForm.disabled = true;
-    cdForm.querySelector('.js-permission-api').textContent = 'Your browser doesn’t support the required Permission API.';
+	cdForm.disabled = true;
+	cdForm.querySelector('.js-permission-api').textContent = 'Your browser doesn’t support the required Permission API.';
 }
 
 cdForm.addEventListener('submit', event => {
-    event.preventDefault();
+	event.preventDefault();
 
-    const origin = new URL(cdInput.value).origin;
+	const origin = new URL(cdInput.value).origin;
 
-    if (origin) {
-        chrome.permissions.request({
-            origins: [
-                `${origin}/*`
-            ]
-        }, granted => {
-            if (granted) {
-                cdForm.reset();
-            }
-        });
-    }
+	if (origin) {
+		chrome.permissions.request({
+			origins: [
+				`${origin}/*`
+			]
+		}, granted => {
+			if (granted) {
+				cdForm.reset();
+			}
+		});
+	}
 });

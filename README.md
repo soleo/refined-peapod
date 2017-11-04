@@ -35,7 +35,7 @@ $ yarn run watch
 - Click on Load unpacked extension
 - Select the folder extension
 
-#### Publish
+### Publish
 
 ```shell
 $ yarn run release
