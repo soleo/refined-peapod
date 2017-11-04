@@ -14,7 +14,6 @@ but I do like cleaner design rather than complex.
 - [X] Simplify Navigation and Removed Express Shop, Delivery Time and Favorites
 - [X] Remove Notification Bar and Hi, User Message
 - [ ] Better format for Item Detail Description so that I can actually read.
-
 - [ ] Support Custom Domain Name
 
 ### Function Improvements

@@ -19,100 +19,100 @@ video {
 
 /* revert back the color when in printing mode. Save some trees */
 @media print {
-    :root {
-       background-color: transparent;
-       filter: invert(100%);
-    }
+	:root {
+	   background-color: transparent;
+	   filter: invert(100%);
+	}
 }
 
 /* add rounded corner for all regular images so that it look nicer */
 img:not([src*=".svg"]){
-    border-radius: 0.5rem;
+	border-radius: 0.5rem;
 }
 
 /* keyweb message style fix */
 .kwm-prod_wrapper img {
-    border-radius: inherit;
+	border-radius: inherit;
 }
 
 /* disable high-contrast-switch. Night mode doesn't need it */
 high-contrast-switch {
-    display: none !important;
+	display: none !important;
 }
 
 /* peapod use inline svg, so I don't want those to be inverted */
 /* reverse for some icons https://www.peapod.com/shop/images/icons/PeapodIcons.json*/
 .icon--search,
 [svg-id="icon_search"] {
-    background-color: #d9d9d9 !important;
+	background-color: #d9d9d9 !important;
 }
 
 /* make some room the corner radius */
 .search-icon_container {
-    height: 80% !important;
-    top: 0.5rem !important;
+	height: 80% !important;
+	top: 0.5rem !important;
 }
 
 /* fix keyweb sliders arrows in hover state*/
 .carousel-nav_button [svg-id="arrow_carrot-left"],
 .carousel-nav_button [svg-id="arrow_carrot-right"]{
-    background-color: transparent !important;
+	background-color: transparent !important;
 }
 
 /* make product image more visable in cart modal */
 .product-cart-cell_image {
-    z-index: 1;
+	z-index: 1;
 }
 
 /* highlight out of stock buttons */
 .out-of-stock button.button--disabled{
-    color: #333 !important;
+	color: #333 !important;
 }
 
 /* style fix for guest promo tiles on mobile */
 .mobile .promo-tile.promo-tile_nav .promo-tile_nav--text {
-    margin-left: 4.5rem;
-    padding-left: 0 !important;
+	margin-left: 4.5rem;
+	padding-left: 0 !important;
 }
 
 /* hide the sort by button arrow */
 .select-box-arrow {
-    background-color: inherit !important;
-    opacity: 1 !important;
-    background-image: none !important;
-    height: auto !important;
+	background-color: inherit !important;
+	opacity: 1 !important;
+	background-image: none !important;
+	height: auto !important;
 }
 
 /* fix promo flag end spacing issue */
 .item-detail_flag--flag:after{
-    z-index: 0 !important;
+	z-index: 0 !important;
 }
 
 /* add some space between quick facts images in item detail */
 .dietary-attribute img {
-    margin-right: 1rem;
+	margin-right: 1rem;
 }
 
 /* fix nutrition facts background */
 .nutrition {
-    background-color: #f2f2f2 !important;
+	background-color: #f2f2f2 !important;
 }
 .nutrition .servings-section,
 .nutrition .amount-per-serving-section,
 .nutrition .vitamin_info{
-    background-color: transparent !important;
+	background-color: transparent !important;
 }
 
 /* Rewrite the color for better display */
 .button--green {
-    background-color: rebeccapurple !important;
+	background-color: rebeccapurple !important;
 }
 .product-grid-cell_main-price,
 .product-list-cell_main-price,
 .mobile-product-list-cell_main-price,
 .product-cart-cell_total,
 .price {
-    color: rebeccapurple !important;
+	color: rebeccapurple !important;
 }
 
 .product-grid-cell_main-price--on-sale,
@@ -120,78 +120,83 @@ high-contrast-switch {
 .mobile-product-list-cell_main-price--on-sale,
 .product-cart-cell_total--on-sale,
 .price.on-sale {
-    color: darkcyan !important;
+	color: darkcyan !important;
 }
 .item-detail_flag--flag.sale {
-    background-color: darkcyan !important;
+	background-color: darkcyan !important;
 }
 .item-detail_flag--flag.sale:after {
-    border-top-color: darkcyan !important;
-    border-bottom-color: darkcyan !important;
+	border-top-color: darkcyan !important;
+	border-bottom-color: darkcyan !important;
 }
 
 /* reset background for block spinner */
 .loading-spinner-block .loading-spinner_container {
-    background-color: rebeccapurple !important;
+	background-color: rebeccapurple !important;
 }
 
 .loading-spinner-block .loading-spinner .circle {
-    background-color: rebeccapurple !important;
+	background-color: rebeccapurple !important;
 }
 
 .loading-spinner-block .loading-spinner:after {
-    background-color: rebeccapurple !important;
+	background-color: rebeccapurple !important;
 }
 
 .loading-spinner-block .loading-spinner_container .spinner {
-    background-color: black !important;
+	background-color: black !important;
+}
+
+/* reset arrows for filters and sorting */
+.vector-icon_list-arrow-wrapper {
+	background-color: transparent !important;
 }
 
 /* hide the elements which I don't care */
 
 /* hide any promo flags on product cells */
 .item-detail_flag--flag {
-    display: none !important;
+	display: none !important;
 }
 
 /* hide category image in browse aisles */
 .item-container_child--with-image img{
-    display: none !important;
+	display: none !important;
 }
 
 /* hide express shop, favorite, delivery time from nav */
 .navigation.header-nav_link-container li:nth-child(5),
 .navigation.header-nav_link-container li:nth-child(7),
 .navigation.header-nav_link-container li:nth-child(8){
-    display: none !important;
+	display: none !important;
 }
 
 /* hide hello message and notification count */
 main .header-theme--subheader:nth-child(1){
-    display: none !important;
+	display: none !important;
 }
 
 /* special promo left and right padding */
 .product-view_specials--header {
-    max-width: 124rem;
-    padding: 0 2rem;
-    margin: 0 auto;
+	max-width: 124rem;
+	padding: 0 2rem;
+	margin: 0 auto;
 }
 
 /* splash page text block padding change */
 .splash-page_copy-block {
-    max-width: 118rem !important;
+	max-width: 118rem !important;
 }
 
 /* larger font size for text block in splash page */
 .splash-page_copy-block .splash-page_copy {
-    font-size: 2.2rem !important;
-    line-height: 3.1rem !important;
+	font-size: 2.2rem !important;
+	line-height: 3.1rem !important;
 }
 
 .splash-page_copy-header {
-    font-size: 3.4rem !important;
-    line-height: 4rem !important;
+	font-size: 3.4rem !important;
+	line-height: 4rem !important;
 }
 
 

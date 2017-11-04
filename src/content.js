@@ -1,17 +1,18 @@
 import 'webext-dynamic-content-scripts';
 import select from 'select-dom';
 import domLoaded from 'dom-loaded';
-import {safeElementReady} from './libs/utils';
+
+import linkifyItemDetail from './features/linkify-urls-in-item-detail';
+
+import {safeElementReady, safely} from './libs/utils';
+import onAjaxedPages from './libs/peapod-injection';
 
 // Add globals for easier debugging
 window.$ = $;
 window.select = select;
 
 async function init() {
-	await safeElementReady('body');
-	if (document.body.classList.contains('logged-out')) {
-		return;
-	}
+	//await safeElementReady('body:visible');
 
 	if (select.exists('html.refined-peapod')) {
 		console.count('Refined Peapod was loaded multiple times.');
@@ -24,7 +25,12 @@ async function init() {
 }
 
 function onDomReady() {
-	// Do more changes when everything is loaded.
+	onAjaxedPages(ajaxedPagesHandler);
+}
+
+function ajaxedPagesHandler() {
+	// Format Item Detail Modal .manufacturer-information
+	safely(linkifyItemDetail);
 }
 
 init();

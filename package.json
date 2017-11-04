@@ -35,6 +35,7 @@
 		"dom-chef": "^3.0.0",
 		"dom-loaded": "^1.0.1",
 		"element-ready": "^2.2.0",
+		"linkify-urls": "^1.4.0",
 		"select-dom": "^4.1.1",
 		"webext-dynamic-content-scripts": "^2.0.1",
 		"webext-options-sync": "^0.12.0",
@@ -74,7 +75,6 @@
 			"extension/**"
 		]
 	},
-
 	"babel": {
 		"plugins": [
 			[
