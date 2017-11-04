@@ -3,7 +3,6 @@ import select from 'select-dom';
 import domLoaded from 'dom-loaded';
 import {safeElementReady} from './libs/utils';
 
-
 // Add globals for easier debugging
 window.$ = $;
 window.select = select;

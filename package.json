@@ -7,7 +7,7 @@
 		"test": "test"
 	},
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
+		"test": "xo && run-s build:minified",
 		"build": "webpack",
 		"build:minified": "cross-env NODE_ENV=production webpack",
 		"watch": "webpack --watch",
@@ -52,8 +52,29 @@
 		"npm-run-all": "^4.1.1",
 		"uglifyjs-webpack-plugin": "^1.0.0-beta.1",
 		"webext": "^1.9.1-with-submit.1",
-		"webpack": "^3.7.1"
+		"webpack": "^3.7.1",
+		"xo": "*"
 	},
+	"xo": {
+		"envs": [
+			"browser",
+			"jquery",
+			"webextensions"
+		],
+		"rules": {
+			"import/no-unassigned-import": 0,
+			"no-unused-vars": [
+				2,
+				{
+					"varsIgnorePattern": "^h$"
+				}
+			]
+		},
+		"ignores": [
+			"extension/**"
+		]
+	},
+
 	"babel": {
 		"plugins": [
 			[
