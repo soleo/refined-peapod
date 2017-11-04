@@ -45,4 +45,6 @@ $ yarn run release
 
 ### Reference 
 
+- [Using Webstore API](https://developer.chrome.com/webstore/using_webstore_api)
 - [How to generate Google API keys](https://github.com/DrewML/chrome-webstore-upload/blob/master/How%20to%20generate%20Google%20API%20keys.md)
+
