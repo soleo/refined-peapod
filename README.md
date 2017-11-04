@@ -23,9 +23,24 @@ but I do like cleaner design rather than complex.
 
 ### Development
 
-### Load Extension In Chrome
+```shell
+$ yarn 
+$ yarn run watch
+```
+
+#### Load Extension In Chrome
 
 - Visit chrome://extensions/ in Chrome
 - Enable the Developer mode
 - Click on Load unpacked extension
 - Select the folder extension
+
+#### Publish
+
+```shell
+$ yarn run release
+```
+
+### Reference 
+
+- [How to generate Google API keys](https://github.com/DrewML/chrome-webstore-upload/blob/master/How%20to%20generate%20Google%20API%20keys.md)

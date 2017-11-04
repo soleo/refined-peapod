@@ -9,23 +9,23 @@ window.$ = $;
 window.select = select;
 
 async function init() {
-    await safeElementReady('body');
-    if (document.body.classList.contains('logged-out')) {
-        return;
-    }
+	await safeElementReady('body');
+	if (document.body.classList.contains('logged-out')) {
+		return;
+	}
 
-    if (select.exists('html.refined-peapod')) {
-        console.count('Refined Peapod was loaded multiple times.');
-        return;
-    }
+	if (select.exists('html.refined-peapod')) {
+		console.count('Refined Peapod was loaded multiple times.');
+		return;
+	}
 
-    document.documentElement.classList.add('refined-peapod');
+	document.documentElement.classList.add('refined-peapod');
 
-    domLoaded.then(onDomReady);
+	domLoaded.then(onDomReady);
 }
 
 function onDomReady() {
-    // do more changes when everything is loaded.
+	// do more changes when everything is loaded.
 }
 
 init();
