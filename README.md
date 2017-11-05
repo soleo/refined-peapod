@@ -13,14 +13,16 @@ but I do like cleaner design rather than complex.
 - [X] Remove all sales flags to make UI cleaner
 - [X] Simplify Navigation and Removed Express Shop, Delivery Time and Favorites
 - [X] Remove Notification Bar and Hi, User Message
-- [ ] Better format for Item Detail Description so that I can actually read.
+- [ ] Auto "view more" when scroll down to the button position
+- [ ] Scroll To Top In Product Search Results
+- [ ] Highlight Each Ingredient in Item Detail and Link to Wiki (I want to learn more about them)
+- [ ] Add share link to each item detail so that I can share with other people and help them find the product I saw
 - [ ] Support Custom Domain Name
 
 ### Function Improvements
 - [ ] Linkify the content in Item Detail
 - [ ] Quick Search in Google, Amazon, Instacart
-- [ ] If I cannot find my grocery here, I need to quick way to find it somewhere else
-- [ ] If I want Peapod to carry the item I want, I want to provide an easy way to add the item. Expose it to the top navigation bar
+- [ ] Add "Request an Item" to the top Navigation
 
 ### Installation
 
@@ -29,7 +31,7 @@ but I do like cleaner design rather than complex.
 ### Development
 
 ```shell
-$ yarn 
+$ yarn
 $ yarn run watch
 ```
 
@@ -46,7 +48,7 @@ $ yarn run watch
 $ yarn run release
 ```
 
-### Reference 
+### Reference
 
 - [Using Webstore API](https://developer.chrome.com/webstore/using_webstore_api)
 - [How to generate Google API keys](https://github.com/DrewML/chrome-webstore-upload/blob/master/How%20to%20generate%20Google%20API%20keys.md)
