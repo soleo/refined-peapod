@@ -12,7 +12,7 @@ window.$ = $;
 window.select = select;
 
 async function init() {
-	//await safeElementReady('body:visible');
+	await safeElementReady('body');
 
 	if (select.exists('html.refined-peapod')) {
 		console.count('Refined Peapod was loaded multiple times.');

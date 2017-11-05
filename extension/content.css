@@ -14,7 +14,7 @@ img:not([src*=".svg"]),
 .magnify-glass,
 iframe img:not([src*=".svg"]),
 video {
-   filter: invert(100%);
+	filter: invert(100%);
 }
 
 /* revert back the color when in printing mode. Save some trees */

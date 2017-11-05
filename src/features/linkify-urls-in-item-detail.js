@@ -4,6 +4,14 @@ import getTextNodes from '../libs/get-text-nodes';
 
 const linkifiedURLClass = 'refined-peapod-linkified-detail';
 
+const options = {
+	type: 'dom',
+	baseUrl: '',
+	attrs: {
+		target: '_blank'
+	}
+};
+
 export const editTextNodes = (fn, el) => {
 	// Spread required because the elements will change and the TreeWalker will break
 	for (const textNode of [...getTextNodes(el)]) {
