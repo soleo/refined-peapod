@@ -177,8 +177,10 @@ main .header-theme--subheader:nth-child(1){
 }
 
 /* special promo left and right padding */
-.product-view_specials--header {
-	max-width: 124rem;
+/* splash page item accordion container paddding adjust */
+.product-view_specials--header,
+.splash-page_content-item .accordion_container {
+	max-width: 124rem !important;
 	padding: 0 2rem;
 	margin: 0 auto;
 }
