@@ -22,6 +22,10 @@ but I do like cleaner design rather than complex.
 - [ ] If I cannot find my grocery here, I need to quick way to find it somewhere else
 - [ ] If I want Peapod to carry the item I want, I want to provide an easy way to add the item. Expose it to the top navigation bar
 
+### Installation
+
+[Download From Chrome Webstore](https://chrome.google.com/webstore/detail/refined-peapod/ldecagemlljkdfmjbebocobandonleok)
+
 ### Development
 
 ```shell
