@@ -16,6 +16,7 @@ but I do like cleaner design rather than complex.
 - [ ] Auto "view more" when scroll down to the button position
 - [ ] Scroll To Top In Product Search Results
 - [ ] Highlight Each Ingredient in Item Detail and Link to Wiki (I want to learn more about them)
+- [ ] Add last purchase date to item detail if I bought the product before
 - [ ] Add share link to each item detail so that I can share with other people and help them find the product I saw
 - [ ] Support Custom Domain Name
 
