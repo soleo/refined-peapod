@@ -18,6 +18,7 @@ but I do like cleaner design rather than complex.
 - [ ] Highlight Each Ingredient in Item Detail and Link to Wiki (I want to learn more about them)
 - [ ] Add last purchase date to item detail if I bought the product before
 - [ ] Add share link to each item detail so that I can share with other people and help them find the product I saw
+- [ ] Add "Save for later" for each product cell and show the items before checkout
 - [ ] Support Custom Domain Name
 
 ### Function Improvements
