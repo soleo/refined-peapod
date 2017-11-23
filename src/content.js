@@ -7,15 +7,13 @@ import linkifyItemDetail from './features/linkify-urls-in-item-detail';
 import nightMode from './features/night-mode';
 
 import {safeElementReady, safely} from './libs/utils';
-import onPageChanges from './libs/peapod-injection';
+import onModalChanges from './libs/peapod-injection';
 
 // Add globals for easier debugging
 window.$ = $;
 window.select = select;
 
-async function init() {
-	// await safeElementReady('body');
-
+function init() {
 	if (select.exists('html.refined-peapod')) {
 		console.count('Refined Peapod was loaded multiple times.');
 		return;
@@ -30,7 +28,7 @@ function onDomReady() {
 	// Night mode switch
 	safely(nightMode);
 
-	onPageChanges(ajaxedPagesHandler);
+	onModalChanges(ajaxedPagesHandler);
 }
 
 function ajaxedPagesHandler() {
