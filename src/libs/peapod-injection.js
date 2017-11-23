@@ -9,9 +9,9 @@ export default cb => {
 		throw new TypeError('Callback is not a function');
 	}
 
-	var observer = new MutationObserver(function(mutations) {
-		mutations.forEach(function(mutation) {
-			mutation.addedNodes.forEach(function(node) {
+	const observer = new MutationObserver(mutations => {
+		mutations.forEach(mutation => {
+			mutation.addedNodes.forEach(node => {
 				if (node.nodeType === Node.ELEMENT_NODE) {
 					cb();
 				}
@@ -25,5 +25,4 @@ export default cb => {
 			subtree: true
 		});
 	}
-
 };

@@ -9,58 +9,59 @@ img,video {
   -webkit-filter: ${NIGHT_MODE_INVERT_FILTER_CSS} !important;
 }`;
 
-var styleElement;
+let styleElement;
 
 function getStyleElement() {
-  if (styleElement) {
-    return styleElement;
-  }
+	if (styleElement) {
+		return styleElement;
+	}
 
-  styleElement = document.createElement('style');
-  styleElement.type = 'text/css';
-  styleElement.appendChild(document.createTextNode(NIGHT_MODE_STYLESHEET));
+	styleElement = document.createElement('style');
+	styleElement.type = 'text/css';
+	styleElement.appendChild(document.createTextNode(NIGHT_MODE_STYLESHEET));
 
-  return styleElement;
+	return styleElement;
 }
 
 function applyInvertFilterToChildBackgroundImageElements(parentNode) {
-  parentNode.querySelectorAll('[style*="background"]').forEach(function(el) {
-    if ((el.style.backgroundImage || '').startsWith('url')) {
-      applyInvertFilterToElement(el);
-    }
-  });
+	parentNode.querySelectorAll('[style*="background"]').forEach(el => {
+		if ((el.style.backgroundImage || '').startsWith('url')) {
+			applyInvertFilterToElement(el);
+		}
+	});
 }
+
+let invertedBackgroundImageElements = null;
+
 function applyInvertFilterToElement(el) {
-  invertedBackgroundImageElements.push(el);
-  el.__RefinedPeapod__NightMode_originalFilter = el.style.webkitFilter;
-  el.style.webkitFilter = NIGHT_MODE_INVERT_FILTER_CSS;
+	invertedBackgroundImageElements.push(el);
+	el.refinedPeapodNightModeOriginalFilter = el.style.webkitFilter;
+	el.style.webkitFilter = NIGHT_MODE_INVERT_FILTER_CSS;
 }
 
 function removeInvertFilterFromElement(el) {
-  el.style.webkitFilter = el.__RefinedPeapod__NightMode_originalFilter;
-  delete el.__RefinedPeapod__NightMode_originalFilter;
+	el.style.webkitFilter = el.refinedPeapodNightModeOriginalFilter;
+	delete el.refinedPeapodNightModeOriginalFilter;
 }
-
-var invertedBackgroundImageElements = null;
 
 // Create a `MutationObserver` that checks for new elements
 // added that have a `background-image` in their `style`
 // property/attribute.
-var observer = new MutationObserver(function(mutations) {
-  mutations.forEach(function(mutation) {
-    mutation.addedNodes.forEach(function(node) {
-      if (node.nodeType === Node.ELEMENT_NODE) {
-        applyInvertFilterToChildBackgroundImageElements(node);
-      }
-    });
-  });
+const observer = new MutationObserver(mutations => {
+	mutations.forEach(mutation => {
+		mutation.addedNodes.forEach(node => {
+			if (node.nodeType === Node.ELEMENT_NODE) {
+				applyInvertFilterToChildBackgroundImageElements(node);
+			}
+		});
+	});
 });
 
 export default () => {
 	new OptionsSync().getAll().then(options => {
-		if(options.enableNightMode) {
+		if (options.enableNightMode) {
 			document.documentElement.classList.add('refined-peapod_night-mode-enabled');
-			var styleElement = getStyleElement();
+			const styleElement = getStyleElement();
 			invertedBackgroundImageElements = [];
 
 			// Apply the NightMode CSS to the document.
@@ -84,15 +85,15 @@ export default () => {
 		observer.disconnect();
 
 		// Remove the "invert" CSS class name from all elements
-	    // it was previously applied to.
-	    invertedBackgroundImageElements.forEach(removeInvertFilterFromElement);
+		// it was previously applied to.
+		invertedBackgroundImageElements.forEach(removeInvertFilterFromElement);
 
-	    // Remove the NightMode CSS from the document.
-	    var styleElementParentNode = styleElement.parentNode;
-	    if (styleElementParentNode) {
-	      styleElementParentNode.removeChild(styleElement);
-	    }
+		// Remove the NightMode CSS from the document.
+		const styleElementParentNode = styleElement.parentNode;
+		if (styleElementParentNode) {
+			styleElementParentNode.removeChild(styleElement);
+		}
 
-	    invertedBackgroundImageElements = null;
+		invertedBackgroundImageElements = null;
 	});
 };

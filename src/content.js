@@ -1,12 +1,11 @@
 import 'webext-dynamic-content-scripts';
 import select from 'select-dom';
 import domLoaded from 'dom-loaded';
-import OptionsSync from 'webext-options-sync';
 
 import linkifyItemDetail from './features/linkify-urls-in-item-detail';
 import nightMode from './features/night-mode';
 
-import {safeElementReady, safely} from './libs/utils';
+import {safely} from './libs/utils';
 import onModalChanges from './libs/peapod-injection';
 
 // Add globals for easier debugging
@@ -34,7 +33,6 @@ function onDomReady() {
 function ajaxedPagesHandler() {
 	// Format Item Detail Modal .manufacturer-information
 	safely(linkifyItemDetail);
-
 }
 
 init();
