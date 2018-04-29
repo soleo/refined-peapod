@@ -1,11 +1,15 @@
 import browser from 'webextension-polyfill';
 import OptionsSync from 'webext-options-sync';
-import injectContentScripts from 'webext-dynamic-content-scripts';
+import dynamicContentScripts from 'webext-dynamic-content-scripts';
 
 // Define defaults
 new OptionsSync().define({
 	defaults: {
-		enableNightMode: true
+		'logging': false,
+		'nightMode': true,
+		'customCss': true,
+		'pastPurchaseIndication': true,
+		'saveForLater': true
 	},
 	migrations: [
 		OptionsSync.migrations.removeUnused
@@ -27,4 +31,4 @@ browser.runtime.onMessage.addListener(async message => {
 });
 
 // Custom domain support
-injectContentScripts();
+dynamicContentScripts.addToFutureTabs();

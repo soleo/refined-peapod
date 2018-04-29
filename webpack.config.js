@@ -1,22 +1,17 @@
 'use strict';
 const path = require('path');
-const webpack = require('webpack');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
-module.exports = {
+module.exports = () => ({
+	devtool: 'sourcemap',
 	entry: {
 		content: './src/content',
 		background: './src/background',
 		options: './src/options'
 	},
-	plugins: [
-		new webpack.DefinePlugin({
-			process: '0'
-		}),
-		new webpack.optimize.ModuleConcatenationPlugin()
-	],
 	output: {
-		path: path.join(__dirname, 'extension'),
+		path: path.join(__dirname, 'dist'),
 		filename: '[name].js'
 	},
 	module: {
@@ -24,26 +19,38 @@ module.exports = {
 			{
 				test: /\.js$/,
 				exclude: /node_modules/,
-				use: {
-					loader: 'babel-loader'
-				}
+				loader: 'babel-loader'
 			}
 		]
-	}
-};
-
-if (process.env.NODE_ENV === 'production') {
-	module.exports.plugins.push(
-		new UglifyJSPlugin({
-			sourceMap: true,
-			uglifyOptions: {
-				mangle: false,
-				output: {
-					beautify: true
-				}
+	},
+	plugins: [
+		new CopyWebpackPlugin([
+			{
+				from: '*',
+				context: 'src',
+				ignore: '*.js'
+			},
+			{
+				from: 'node_modules/webextension-polyfill/dist/browser-polyfill.min.js'
 			}
-		})
-	);
-} else {
-	module.exports.devtool = 'source-map';
-}
+		])
+	],
+	optimization: {
+		// Without this, function names will be garbled and enableFeature won't work
+		concatenateModules: true,
+
+		// Automatically enabled on prod; keeps it somewhat readable for AMO reviewers
+		minimizer: [
+			new UglifyJsPlugin({
+				uglifyOptions: {
+					mangle: false,
+					compress: false,
+					output: {
+						beautify: true,
+						indent_level: 2 // eslint-disable-line camelcase
+					}
+				}
+			})
+		]
+	}
+});

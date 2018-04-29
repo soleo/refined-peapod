@@ -19,7 +19,7 @@ but I do like cleaner design rather than complex.
 - [ ] Add last purchase date to item detail if I bought the product before
 - [ ] Add share link to each item detail so that I can share with other people and help them find the product I saw
 - [ ] Add "Save for later" for each product cell and show the items before checkout
-- [ ] Remove "Pick Up" option. I'd never use PickUp
+- [ ] Remove "Pick Up" option.
 - [ ] Support Custom Domain Name
 
 ### Function Improvements
@@ -43,7 +43,7 @@ $ yarn run watch
 - Visit chrome://extensions/ in Chrome
 - Enable the Developer mode
 - Click on Load unpacked extension
-- Select the folder extension
+- Select the folder `dist`
 
 ### Publish
 

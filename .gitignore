@@ -59,3 +59,6 @@ typings/
 
 *.zip
 
+extension
+dist
+

@@ -57,36 +57,40 @@ const observer = new MutationObserver(mutations => {
 	});
 });
 
-export default () => {
-	new OptionsSync().getAll().then(options => {
-		if (options.enableNightMode) {
-			document.documentElement.classList.add('refined-peapod_night-mode-enabled');
-			const styleElement = getStyleElement();
-			invertedBackgroundImageElements = [];
+export default async () => {
+	const options = await new OptionsSync().getAll();
+	const styleElement = getStyleElement();
+	if (options.nightMode) {
+		document.documentElement.classList.add('refined-peapod_night-mode-enabled');
 
-			// Apply the NightMode CSS to the document.
-			document.documentElement.appendChild(styleElement);
+		invertedBackgroundImageElements = [];
 
-			// Add the "invert" CSS class name to all elements with a
-			// `background-image` in their `style` property/attribute.
-			applyInvertFilterToChildBackgroundImageElements(document);
+		// Apply the NightMode CSS to the document.
+		document.documentElement.appendChild(styleElement);
 
-			// Observe for future elements in the document containing
-			// `background-image` in their `style` property/attribute
-			// so that we can also apply the "invert" CSS class name
-			// to them as they are added.
-			observer.observe(document.documentElement, {
-				childList: true,
-				subtree: true
-			});
-			return;
-		}
+		// Add the "invert" CSS class name to all elements with a
+		// `background-image` in their `style` property/attribute.
+		applyInvertFilterToChildBackgroundImageElements(document);
+
+		// Observe for future elements in the document containing
+		// `background-image` in their `style` property/attribute
+		// so that we can also apply the "invert" CSS class name
+		// to them as they are added.
+		observer.observe(document.documentElement, {
+			childList: true,
+			subtree: true
+		});
+		return;
+	} else {
+
 		// Stop observing for future elements in the document.
 		observer.disconnect();
 
 		// Remove the "invert" CSS class name from all elements
 		// it was previously applied to.
-		invertedBackgroundImageElements.forEach(removeInvertFilterFromElement);
+		if(invertedBackgroundImageElements) {
+			invertedBackgroundImageElements.forEach(removeInvertFilterFromElement);
+		}
 
 		// Remove the NightMode CSS from the document.
 		const styleElementParentNode = styleElement.parentNode;
@@ -95,5 +99,5 @@ export default () => {
 		}
 
 		invertedBackgroundImageElements = null;
-	});
+	}
 };

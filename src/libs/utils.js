@@ -2,7 +2,9 @@ import {h} from 'dom-chef';
 import select from 'select-dom';
 import elementReady from 'element-ready';
 import domLoaded from 'dom-loaded';
+import OptionsSync from 'webext-options-sync';
 
+const options = new OptionsSync().getAll();
 /**
  * Prevent fn's errors from blocking the remaining tasks.
  * https://github.com/sindresorhus/refined-github/issues/678
@@ -10,6 +12,25 @@ import domLoaded from 'dom-loaded';
  */
 export const safely = async fn => fn();
 
+export const enableFeature = async fn => {
+	const {disabledFeatures = '', logging = false} = await options;
+	const log = logging ? console.log : () => {};
+
+	const filename = fn.name.replace(/_/g, '-');
+	if (/^$|^anonymous$/.test(filename)) {
+		console.warn('This feature is nameless', fn);
+	} else if (disabledFeatures.includes(filename)) {
+		log('↩️', 'Skipping', filename);
+		return;
+	}
+	try {
+		fn();
+		log('✅', filename);
+	} catch (err) {
+		console.log('❌', filename);
+		console.error(err);
+	}
+};
 export const groupBy = (array, grouper) => array.reduce((map, item) => {
 	const key = grouper(item);
 	map[key] = map[key] || [];
@@ -69,3 +90,17 @@ export const flatZip = (table, limit = Infinity) => {
 	}
 	return zipped;
 };
+
+/**
+ * Camelize a string, cutting the string by multiple separators like
+ * hyphens, underscores and spaces.
+ *
+ * @param {text} string Text to camelize
+ * @return string Camelized text
+ */
+export const camelize = (text) => {
+    return text.replace(/^([A-Z])|[\s-_]+(\w)/g, function(match, p1, p2, offset) {
+        if (p2) return p2.toUpperCase();
+        return p1.toLowerCase();
+    });
+}
