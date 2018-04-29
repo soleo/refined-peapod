@@ -80,7 +80,6 @@ export default async () => {
 			childList: true,
 			subtree: true
 		});
-		return;
 	} else {
 
 		// Stop observing for future elements in the document.

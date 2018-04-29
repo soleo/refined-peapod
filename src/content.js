@@ -4,6 +4,7 @@ import domLoaded from 'dom-loaded';
 
 import nightMode from './features/night-mode';
 import customCss from './features/custom-css';
+import addShortcutLinks from './features/add-shortcut-links';
 import pastPurchaseIndication from './features/past-purchase-indication';
 import saveForLater from './features/save-for-later';
 
@@ -28,6 +29,7 @@ async function onDomReady() {
 
 	enableFeature(nightMode);
 	enableFeature(customCss);
+	enableFeature(addShortcutLinks);
 	enableFeature(pastPurchaseIndication);
 	enableFeature(saveForLater);
 

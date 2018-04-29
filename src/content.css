@@ -1,5 +1,4 @@
 /* hide the elements which I don't care */
-
 /* hide any promo flags on product cells */
 .refined-peapod_custom-css-enabled .item-detail_flag--flag {
 	display: none !important;
@@ -10,13 +9,14 @@
 	display: none !important;
 }
 
-/* hide delivery time from nav */
-.refined-peapod_custom-css-enabled .navigation.header-nav_link-container li:nth-child(8){
+/* hide delivery time and help menu from nav */
+.refined-peapod_custom-css-enabled .navigation.header-nav_link-container li:nth-child(8),
+.refined-peapod_custom-css-enabled .navigation.header-nav_link-container li:nth-child(9){
 	display: none !important;
 }
 
 /* special promo left and right padding */
-/* splash page item accordion container paddding adjust */
+/* splash page item accordion container padding adjust */
 .refined-peapod_custom-css-enabled .product-view_specials--header,
 .refined-peapod_custom-css-enabled .splash-page_content-item .accordion_container {
 	max-width: 124rem !important;
@@ -40,3 +40,7 @@
 	line-height: 4rem !important;
 }
 
+/* More breathing room between content regions */
+.refined-peapod_custom-css-enabled .generic-content_trailer--xsmall {
+	margin-bottom: 3rem !important;
+}

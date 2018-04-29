@@ -9,7 +9,8 @@ new OptionsSync().define({
 		'nightMode': true,
 		'customCss': true,
 		'pastPurchaseIndication': true,
-		'saveForLater': true
+		'saveForLater': true,
+		'addShortcutLinks': true
 	},
 	migrations: [
 		OptionsSync.migrations.removeUnused
