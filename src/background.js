@@ -5,12 +5,12 @@ import dynamicContentScripts from 'webext-dynamic-content-scripts';
 // Define defaults
 new OptionsSync().define({
 	defaults: {
-		'logging': false,
-		'nightMode': true,
-		'customCss': true,
-		'pastPurchaseIndication': true,
-		'saveForLater': true,
-		'addShortcutLinks': true
+		logging: false,
+		nightMode: true,
+		customCss: true,
+		pastPurchaseIndication: true,
+		saveForLater: true,
+		addShortcutLinks: true
 	},
 	migrations: [
 		OptionsSync.migrations.removeUnused

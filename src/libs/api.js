@@ -5,7 +5,7 @@ export default async endpoint => {
 		return cache.get(endpoint);
 	}
 	const api = 'https://www.peapod.com/api/';
-	const response = await fetch(api + endpoint, { credentials: 'include' });
+	const response = await fetch(api + endpoint, {credentials: 'include'});
 	const json = await response.json();
 	cache.set(endpoint, json);
 	return json;

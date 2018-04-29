@@ -7,7 +7,8 @@
 		"test": "test"
 	},
 	"scripts": {
-		"test": "xo && run-s build:minified",
+		"test": "xo && run-s build",
+		"lint-fix": "xo --fix",
 		"build": "webpack --mode=production",
 		"watch": "webpack --mode=development --watch",
 		"release:cws": "cd dist && webstore upload --auto-publish --extension-id $EXTENSION_ID --client-id $CLIENT_ID --client-secret $CLIENT_SECRET --refresh-token $REFRESH_TOKEN",

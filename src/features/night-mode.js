@@ -81,13 +81,12 @@ export default async () => {
 			subtree: true
 		});
 	} else {
-
 		// Stop observing for future elements in the document.
 		observer.disconnect();
 
 		// Remove the "invert" CSS class name from all elements
 		// it was previously applied to.
-		if(invertedBackgroundImageElements) {
+		if (invertedBackgroundImageElements) {
 			invertedBackgroundImageElements.forEach(removeInvertFilterFromElement);
 		}
 

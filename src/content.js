@@ -8,7 +8,7 @@ import addShortcutLinks from './features/add-shortcut-links';
 import pastPurchaseIndication from './features/past-purchase-indication';
 import saveForLater from './features/save-for-later';
 
-import {safely, enableFeature} from './libs/utils';
+import {enableFeature} from './libs/utils';
 
 // Add globals for easier debugging
 window.select = select;
@@ -26,7 +26,6 @@ async function init() {
 }
 
 async function onDomReady() {
-
 	enableFeature(nightMode);
 	enableFeature(customCss);
 	enableFeature(addShortcutLinks);
@@ -35,6 +34,5 @@ async function onDomReady() {
 
 	await Promise.resolve();
 }
-
 
 init();
