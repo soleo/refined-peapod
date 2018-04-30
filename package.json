@@ -32,6 +32,7 @@
 	},
 	"homepage": "https://github.com/soleo/refined-peapod#readme",
 	"dependencies": {
+		"debounce-fn": "^1.0.0",
 		"dom-chef": "^3.0.0",
 		"dom-loaded": "^1.0.1",
 		"element-ready": "^2.2.0",

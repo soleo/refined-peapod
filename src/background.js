@@ -10,7 +10,8 @@ new OptionsSync().define({
 		customCss: true,
 		pastPurchaseIndication: true,
 		saveForLater: true,
-		addShortcutLinks: true
+		addShortcutLinks: true,
+		autoViewMore: true
 	},
 	migrations: [
 		OptionsSync.migrations.removeUnused

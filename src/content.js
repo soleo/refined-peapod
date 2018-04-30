@@ -7,13 +7,16 @@ import customCss from './features/custom-css';
 import addShortcutLinks from './features/add-shortcut-links';
 import pastPurchaseIndication from './features/past-purchase-indication';
 import saveForLater from './features/save-for-later';
+import autoViewMore from './features/auto-view-more';
 
-import {enableFeature} from './libs/utils';
+import {safeElementReady, enableFeature} from './libs/utils';
 
 // Add globals for easier debugging
 window.select = select;
 
 async function init() {
+	await safeElementReady('body:not(.ng-cloak)');
+
 	if (select.exists('html.refined-peapod')) {
 		console.warn('Refined Peapod was loaded multiple times.');
 		return;
@@ -28,6 +31,7 @@ async function init() {
 async function onDomReady() {
 	enableFeature(nightMode);
 	enableFeature(customCss);
+	enableFeature(autoViewMore);
 	enableFeature(addShortcutLinks);
 	enableFeature(pastPurchaseIndication);
 	enableFeature(saveForLater);

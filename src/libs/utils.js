@@ -63,12 +63,12 @@ export const observeEl = (el, listener, options = {childList: true}) => {
 		return;
 	}
 
-	// Run first
-	listener([]);
-
 	// Run on updates
 	const observer = new MutationObserver(listener);
 	observer.observe(el, options);
+
+	// Run the first time
+	listener.call(observer, []);
 	return observer;
 };
 

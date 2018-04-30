@@ -44,3 +44,9 @@
 .refined-peapod_custom-css-enabled .generic-content_trailer--xsmall {
 	margin-bottom: 3rem !important;
 }
+
+.past-purchase-flag {
+	position: absolute;
+	top: 9rem;
+	right: 0;
+}
