@@ -5,13 +5,13 @@
 }
 
 /* hide category image in browse aisles */
-.refined-peapod_custom-css-enabled .item-container_child--with-image img{
+.refined-peapod_custom-css-enabled .item-container_child--with-image img {
 	display: none !important;
 }
 
 /* hide delivery time and help menu from nav */
 .refined-peapod_custom-css-enabled .navigation.header-nav_link-container li:nth-child(8),
-.refined-peapod_custom-css-enabled .navigation.header-nav_link-container li:nth-child(9){
+.refined-peapod_custom-css-enabled .navigation.header-nav_link-container li:nth-child(9) {
 	display: none !important;
 }
 

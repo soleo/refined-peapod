@@ -21,5 +21,4 @@ export default async () => {
 			});
 		});
 	}
-	console.log(pastPurchaseProductIds);
 };
